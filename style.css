@@ -49,6 +49,7 @@ body {
 p {
   color: var(--black);
 }
+
 /* -------------------------------------------- */
 /* header */
 .header {
@@ -117,6 +118,7 @@ p {
     display: none;
   }
 }
+
 /* -------------------------------------------- */
 /* Container-1 */
 .container-1 {
@@ -199,6 +201,7 @@ p {
     font-size: var(--gap);
   }
 }
+
 /* -------------------------------------------- */
 /* Container-2 */
 .container-2 {
@@ -238,6 +241,7 @@ p {
   z-index: 3;
   position: fixed;
 }
+
 /* -------------------------------------------- */
 /* Container-3 */
 .container-3 {
@@ -294,6 +298,7 @@ p {
   font-size: 1rem;
   display: block;
 }
+
 /* -------------------------------------------- */
 /* container-4 */
 .container-4 {
@@ -311,6 +316,7 @@ p {
   background-color: var(--theme);
   width: clamp(7rem, 5vw, 10rem);
 }
+
 /* -------------------------------------------- */
 /* container-5 */
 .container-5 {
@@ -328,6 +334,7 @@ p {
   background-color: var(--theme);
   width: clamp(12rem, 5vw, 16rem);
 }
+
 /* -------------------------------------------- */
 /* container-6 */
 .container-6 {
@@ -355,6 +362,7 @@ p {
 .container-6 .content .item:hover {
   text-decoration: underline;
 }
+
 /* -------------------------------------------- */
 /* card */
 .card-group {
@@ -376,7 +384,6 @@ p {
   flex-direction: column;
   border: 1px solid #8a2be240;
 }
-
 /* -------------------------------------------- */
 .card .card-title {
   font-size: clamp(1.2rem, 5vw, 1.5rem);
@@ -396,11 +403,11 @@ p {
 .card .card-points li {
   list-style: circle;
 }
+
 /* -------------------------------------------- */
 /* footer */
 .footer {
   margin-top: var(--gap);
-
   background-image: linear-gradient(to top left, #8a2be2, #3f7f94);
   text-transform: capitalize;
 }

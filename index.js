@@ -30,7 +30,6 @@ createNavigationItem(`C#`, `c-sharp`);
 createNavigationItem(`SQL`, `sql`);
 
 // console.log(navigation);
-// --------------------------------------------
 
 // --------------------------------------------
 // element
@@ -59,6 +58,7 @@ element(`JavaScript`, `Scripting Language`, `javascript`);
 element(`SQL`, `Domain-specific Language`, `sql`);
 element(`WordPress`, `CMS Tool`, `wordpress`);
 element(`ASP.Net`, `Web-application framework`, `asp-net`);
+
 // --------------------------------------------
 // pill
 const pill = (text, link) => {
@@ -76,6 +76,7 @@ pill(`Java`, `online-java-compiler`);
 pill(`C`, `online-c-language-compiler`);
 pill(`C++`, `online-c-plus-plus-compiler`);
 pill(`C#`, `online-c-sharp-compiler`);
+
 // --------------------------------------------
 // project
 const project = (text, link) => {
@@ -93,6 +94,7 @@ project(`JavaScript`, `#`);
 project(`C`, `#`);
 project(`C++`, `#`);
 project(`C#`, `#`);
+
 // --------------------------------------------
 // tag
 const tags = (text) => {
@@ -128,6 +130,7 @@ tags(`Native Application`);
 tags(`Hybrid Application`);
 tags(`Web Application`);
 tags(`Data Structure`);
+
 // --------------------------------------------
 // currentYear
 const currentYear = new Date().getFullYear();
