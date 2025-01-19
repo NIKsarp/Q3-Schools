@@ -1,3 +1,5 @@
+// --------------------------------------------
+// createElement
 const createElement = (tagName, className, textContent) => {
   const element = document.createElement(tagName);
   element.className = className;
@@ -5,7 +7,31 @@ const createElement = (tagName, className, textContent) => {
   return element;
 };
 
-// let main = document.getElementsByClassName(`content`);
+// --------------------------------------------
+// navigation
+const createNavigationItem = (textContent, href) => {
+  const navItem = createElement(`li`, `nav-item`);
+  const navLink = createElement(`a`, `nav-link`, textContent);
+  navLink.href = `https://q3schools.com/${href}/`;
+  // --------------------------------------------
+  const navigation = document.getElementById(`navigation`);
+  navItem.appendChild(navLink);
+  navigation.appendChild(navItem);
+  return navItem;
+};
+createNavigationItem(`HTML`, `html`);
+createNavigationItem(`CSS`, `css`);
+createNavigationItem(`JavaScript`, `javascript`);
+createNavigationItem(`Python`, `python`);
+createNavigationItem(`Java`, `java`);
+createNavigationItem(`C Language`, `c-language`);
+createNavigationItem(`C++`, `c-plus-plus`);
+createNavigationItem(`C#`, `c-sharp`);
+createNavigationItem(`SQL`, `sql`);
+
+// console.log(navigation);
+// --------------------------------------------
+
 // --------------------------------------------
 // element
 const element = (name, text, link) => {
