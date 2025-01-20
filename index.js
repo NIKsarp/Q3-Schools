@@ -132,8 +132,79 @@ tags(`Web Application`);
 tags(`Data Structure`);
 
 // --------------------------------------------
-// create-footer-item in col 1, 2, 3
+// article - 1, 2, 3, 4
+// const createCardStructure = (title, textContent) => {
+//   const cardTitle = createElement(`h3`, `card-title`, title);
+//   const cardText = createElement(`p`, `card-text`, textContent);
+//   return { cardTitle, cardText };
+// };
+// const createCard = (title, textContent, textContent2) => {
+//   const { cardTitle, cardText } = createCardStructure(title, textContent);
+//   const cardText2 = createElement(`p`, `card-Text`, textContent2);
+//   const container = document.getElementById(`card1`);
+//   container.append(cardTitle, cardText, cardText2);
+// };
+// const createCard2 = (title, subTitle, textContent) => {
+//   const { cardTitle, cardText } = createCardStructure(title, textContent);
+//   const cardSubtitle = createElement(`h4`, `card-subtitle`, subTitle);
+//   const container = document.getElementById(`card2`);
+//   container.append(cardTitle, cardSubtitle, cardText);
+// };
+// const createCard3 = (
+//   title,
+//   subTitle,
+//   cardPoint1,
+//   cardPoint2,
+//   cardPoint3,
+//   cardPoint4,
+//   cardPoint5
+// ) => {
+//   const { cardTitle } = createCardStructure(title);
+//   const cardSubtitle = createElement(`h4`, `card-subtitle`, subTitle);
+//   const cardPoints = createElement(`ul`, `card-points`);
+//   const point1 = createElement(`li`, `point`, cardPoint1);
+//   const point2 = createElement(`li`, `point`, cardPoint2);
+//   const point3 = createElement(`li`, `point`, cardPoint3);
+//   const point4 = createElement(`li`, `point`, cardPoint4);
+//   const point5 = createElement(`li`, `point`, cardPoint5);
+//   cardPoints.append(point1, point2, point3, point4, point5);
+//   const container = document.getElementById(`card3`);
+//   container.append(cardTitle, cardSubtitle, cardPoints);
+// };
+// const createCard4 = (title, textContent, textContent2) => {
+//   const { cardTitle, cardText } = createCardStructure(title, textContent);
+//   const cardText2 = createElement(`p`, `card-Text`, textContent2);
+//   const container = document.getElementById(`card4`);
+//   container.append(cardTitle, cardText, cardText2);
+// };
 
+// createCard(
+//   `Learn Programming Language & Coding Course`,
+//   `<strong>Learn programming language</strong> and <strong>coding course</strong> from industry expert. Coding courses build skills that allow you to develop applications and projects that solve problems (or just offer a lot of fun). Starting with free coding courses can be an excellent way to get your feet wet and figure out a few basics before committing to a particular track.`,
+//   `A <strong>programming language</strong> is a system of notation for writing computer programs. Most programming languages are text-based formal languages, but they may also be graphical. They are a kind of computer language.`
+// );
+// createCard2(
+//   `Difference between Programming Language and Coding Course`,
+//   `What is Programming Language ?`,
+//   `A <a class="highlight" href="https://itpathshaala.in/product-category/cs-course/" >programming language</a> is a vocabulary and set of grammatical rules for instructing a computer or computing device to perform specific tasks. The term programming language usually refers to high-level languages, such as BASIC, C, C++, Python, Java, ASP.Net, C sharp, and Pascal.`
+// );
+// createCard3(
+//   `What are the 5 types of programming language ?`,
+//   `5 major types of programming languages Procedural programming languages.`,
+//   `Procedural language follows a sequence of statments or commands in order to achieve a desire output.`,
+//   `Functional <a class="highlight" href="https://q3schools.com/">programming languages</a>`,
+//   `Object-oriented programming languages`,
+//   `Scripting languages`,
+//   `Logic programming languages`
+// );
+// createCard4(
+//   `What is Coding Course ?`,
+//   `The definition of <a href="https://q3schools.com/">coding course</a> is the process of creating instructions for computers using programming languages. Coding is used to program the websites, apps, and other technologies we interact with every day. But, what is coding and why is it important?`,
+//   `Most people in and out of the tech sphere have heard the terms coding and programming. Many of the best tech careers require the ability to code. If you want to work in a high-paying field like software engineering, web development, or data science, understanding and using code is essential.`
+// );
+
+// --------------------------------------------
+// create-footer-item in col 1, 2, 3
 const createFooterItem = (title, href, colPosition) => {
   const footerItem = createElement(`li`, `footer-item`);
   const footerLink = createElement(`a`, `footer-link`, title);
