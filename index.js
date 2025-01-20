@@ -132,6 +132,39 @@ tags(`Web Application`);
 tags(`Data Structure`);
 
 // --------------------------------------------
+// create-footer-item in col 1, 2, 3
+
+const createFooterItem = (title, href, colPosition) => {
+  const footerItem = createElement(`li`, `footer-item`);
+  const footerLink = createElement(`a`, `footer-link`, title);
+  const col = document.getElementById(colPosition);
+  footerItem.appendChild(footerLink);
+  title === `internship` || title === `training`
+    ? (footerLink.href = `https://itpathshaala.in/`)
+    : (footerLink.href = `https://q3schools/com/${href}/`);
+  col.appendChild(footerItem);
+};
+// Column 1 items
+createFooterItem(`home`, `#`, `col1`);
+createFooterItem(`services`, `#`, `col1`);
+createFooterItem(`about us`, `about-us`, `col1`);
+createFooterItem(`contact us`, `contact-us`, `col1`);
+
+// Column 2 items
+createFooterItem(`c language`, `c-language`, `col2`);
+createFooterItem(`c++`, `c-plus-plus`, `col2`);
+createFooterItem(`java`, `java`, `col2`);
+createFooterItem(`python`, `python`, `col2`);
+
+// Column 3 items
+createFooterItem(`compiler`, `#`, `col3`);
+createFooterItem(`projects`, `#`, `col3`);
+createFooterItem(`internship`, `#`, `col3`);
+createFooterItem(`training`, `#`, `col3`);
+
+// --------------------------------------------
+
+// --------------------------------------------
 // currentYear
 const currentYear = new Date().getFullYear();
 document
