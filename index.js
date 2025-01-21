@@ -1,24 +1,32 @@
 // --------------------------------------------
-// createElement
+// createElement() Function Start
 const createElement = (tagName, className, textContent) => {
   const element = document.createElement(tagName);
   element.className = className;
-  if (textContent) element.appendChild(document.createTextNode(textContent));
+  if (textContent) {
+    element.appendChild(document.createTextNode(textContent));
+  }
   return element;
 };
 
+// createElement() Function End
 // --------------------------------------------
-// navigation
+
+// --------------------------------------------
+// createNavigationItem() Function Start
 const createNavigationItem = (textContent, href) => {
   const navItem = createElement(`li`, `nav-item`);
   const navLink = createElement(`a`, `nav-link`, textContent);
   navLink.href = `https://q3schools.com/${href}/`;
+
   // --------------------------------------------
+  // Append elements & text
   const navigation = document.getElementById(`navigation`);
   navItem.appendChild(navLink);
   navigation.appendChild(navItem);
   return navItem;
 };
+
 createNavigationItem(`HTML`, `html`);
 createNavigationItem(`CSS`, `css`);
 createNavigationItem(`JavaScript`, `javascript`);
@@ -31,8 +39,11 @@ createNavigationItem(`SQL`, `sql`);
 
 // console.log(navigation);
 
+// createNavigationItem() Function End
 // --------------------------------------------
-// element
+
+// --------------------------------------------
+// element() Function Start
 const element = (name, text, link) => {
   const elementItem = createElement(`li`, `item`);
   const elementLink = createElement(`a`, `link`);
@@ -59,8 +70,11 @@ element(`SQL`, `Domain-specific Language`, `sql`);
 element(`WordPress`, `CMS Tool`, `wordpress`);
 element(`ASP.Net`, `Web-application framework`, `asp-net`);
 
+// element() Function End
 // --------------------------------------------
-// pill
+
+// --------------------------------------------
+// pill() Function Start
 const pill = (text, link) => {
   const pillItem = createElement(`li`, `item`);
   const pillLink = createElement(`a`, `link`, text);
@@ -77,8 +91,11 @@ pill(`C`, `online-c-language-compiler`);
 pill(`C++`, `online-c-plus-plus-compiler`);
 pill(`C#`, `online-c-sharp-compiler`);
 
+// pill() Function End
 // --------------------------------------------
-// project
+
+// --------------------------------------------
+// project() Function Start
 const project = (text, link) => {
   const projectItem = createElement(`li`, `item`),
     projectLink = createElement(`a`, `link`, `${text} Projects`);
@@ -95,16 +112,19 @@ project(`C`, `#`);
 project(`C++`, `#`);
 project(`C#`, `#`);
 
+// project() Function End
 // --------------------------------------------
-// tag
+
+// --------------------------------------------
+// tag() Function Start
 const tags = (text) => {
   const tagItem = createElement(`li`, `item`, text);
-
+  
   const content6 = document.getElementById(`content-6`);
   content6.appendChild(tagItem);
 };
 tags(`C Language`),
-  tags(`C++`),
+tags(`C++`),
   tags(`Java`),
   tags(`Python`),
   tags(`SQL`),
@@ -112,29 +132,33 @@ tags(`C Language`),
   tags(`CSS`),
   tags(`JavaScript`),
   tags(`C#`);
-tags(`Kotlin`);
-tags(`WordPress`);
-tags(`ASP.Net`);
-tags(`Website Development`);
-tags(`Android Development`);
-tags(`Software Development`);
-tags(`Data Science`);
-tags(`AWS`);
-tags(`Google Cloud`);
-tags(`Ethical Hacking`);
-tags(`Front End Developer`);
-tags(`Back End Developer`);
-tags(`Full Stack Developer`);
+  tags(`Kotlin`);
+  tags(`WordPress`);
+  tags(`ASP.Net`);
+  tags(`Website Development`);
+  tags(`Android Development`);
+  tags(`Software Development`);
+  tags(`Data Science`);
+  tags(`AWS`);
+  tags(`Google Cloud`);
+  tags(`Ethical Hacking`);
+  tags(`Front End Developer`);
+  tags(`Back End Developer`);
+  tags(`Full Stack Developer`);
 tags(`React.JS`);
 tags(`Native Application`);
 tags(`Hybrid Application`);
 tags(`Web Application`);
 tags(`Data Structure`);
 
+// tag() Function End
 // --------------------------------------------
+
+// --------------------------------------------
+// createCard() Start
 // article - 1, 2, 3, 4
 // const createCardStructure = (title, textContent) => {
-//   const cardTitle = createElement(`h3`, `card-title`, title);
+  //   const cardTitle = createElement(`h3`, `card-title`, title);
 //   const cardText = createElement(`p`, `card-text`, textContent);
 //   return { cardTitle, cardText };
 // };
@@ -178,16 +202,24 @@ tags(`Data Structure`);
 //   container.append(cardTitle, cardText, cardText2);
 // };
 
+// --------------------------------------------
+// createCard() - 1
 // createCard(
 //   `Learn Programming Language & Coding Course`,
 //   `<strong>Learn programming language</strong> and <strong>coding course</strong> from industry expert. Coding courses build skills that allow you to develop applications and projects that solve problems (or just offer a lot of fun). Starting with free coding courses can be an excellent way to get your feet wet and figure out a few basics before committing to a particular track.`,
 //   `A <strong>programming language</strong> is a system of notation for writing computer programs. Most programming languages are text-based formal languages, but they may also be graphical. They are a kind of computer language.`
 // );
+
+// --------------------------------------------
+// createCard() - 2
 // createCard2(
 //   `Difference between Programming Language and Coding Course`,
 //   `What is Programming Language ?`,
 //   `A <a class="highlight" href="https://itpathshaala.in/product-category/cs-course/" >programming language</a> is a vocabulary and set of grammatical rules for instructing a computer or computing device to perform specific tasks. The term programming language usually refers to high-level languages, such as BASIC, C, C++, Python, Java, ASP.Net, C sharp, and Pascal.`
 // );
+
+// --------------------------------------------
+// createCard() - 3
 // createCard3(
 //   `What are the 5 types of programming language ?`,
 //   `5 major types of programming languages Procedural programming languages.`,
@@ -197,13 +229,20 @@ tags(`Data Structure`);
 //   `Scripting languages`,
 //   `Logic programming languages`
 // );
+
+// --------------------------------------------
+// createCard() - 4
 // createCard4(
 //   `What is Coding Course ?`,
 //   `The definition of <a href="https://q3schools.com/">coding course</a> is the process of creating instructions for computers using programming languages. Coding is used to program the websites, apps, and other technologies we interact with every day. But, what is coding and why is it important?`,
 //   `Most people in and out of the tech sphere have heard the terms coding and programming. Many of the best tech careers require the ability to code. If you want to work in a high-paying field like software engineering, web development, or data science, understanding and using code is essential.`
 // );
 
+// createCard() End
 // --------------------------------------------
+
+// --------------------------------------------
+// createFooterItem() Function Start
 // create-footer-item in col 1, 2, 3
 const createFooterItem = (title, href, colPosition) => {
   const footerItem = createElement(`li`, `footer-item`);
@@ -215,30 +254,35 @@ const createFooterItem = (title, href, colPosition) => {
     : (footerLink.href = `https://q3schools/com/${href}/`);
   col.appendChild(footerItem);
 };
+
+// --------------------------------------------
 // Column 1 items
 createFooterItem(`home`, `#`, `col1`);
 createFooterItem(`services`, `#`, `col1`);
 createFooterItem(`about us`, `about-us`, `col1`);
 createFooterItem(`contact us`, `contact-us`, `col1`);
 
+// --------------------------------------------
 // Column 2 items
 createFooterItem(`c language`, `c-language`, `col2`);
 createFooterItem(`c++`, `c-plus-plus`, `col2`);
 createFooterItem(`java`, `java`, `col2`);
 createFooterItem(`python`, `python`, `col2`);
 
+// --------------------------------------------
 // Column 3 items
 createFooterItem(`compiler`, `#`, `col3`);
 createFooterItem(`projects`, `#`, `col3`);
 createFooterItem(`internship`, `#`, `col3`);
 createFooterItem(`training`, `#`, `col3`);
 
+// createFooterItem() Function End
 // --------------------------------------------
 
 // --------------------------------------------
-// currentYear
+// currentYear() function Start
 const currentYear = new Date().getFullYear();
-document
-  .getElementById(`currentYear`)
-  .appendChild(document.createTextNode(currentYear));
+const currentYearElement = document.getElementById(`currentYear`);
+currentYearElement.appendChild(document.createTextNode(currentYear));
+// currentYear() function End
 // --------------------------------------------
