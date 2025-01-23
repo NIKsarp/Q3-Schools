@@ -1,5 +1,6 @@
 /* -------------------------------------------- */
-/* body */
+/* HTML Body Start */
+
 :root {
   --gap: 0.75rem;
   --white: #fffffe;
@@ -9,6 +10,7 @@
   --blur: blur(1rem) saturate(180%);
   --shadow: 0 1px 2px #12121230, inset 1px 2px 3px #fffffe30;
 }
+
 *,
 ::before,
 ::after {
@@ -20,9 +22,11 @@
   text-decoration: none;
   box-sizing: border-box;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   background-size: cover;
   background-repeat: no-repeat;
@@ -30,19 +34,24 @@ body {
   font-family: "Poppins", sans-serif;
   background-position: center center;
 }
+
 ::selection {
   background-color: #ffff0030;
 }
+
 .base {
   padding: var(--gap);
   margin: 2rem 1.5rem;
 }
+
 p {
   color: var(--black);
 }
 
+/* HTML Body End */
 /* -------------------------------------------- */
-/* header */
+/* Header Start */
+
 .header {
   top: 0;
   z-index: 3;
@@ -54,11 +63,14 @@ p {
   box-shadow: 0 1rem 1rem #12121220, inset 0 -1rem 1rem #fffffe20;
   background-image: linear-gradient(to top left, #481e70, blueviolet);
 }
+
 /* -------------------------------------------- */
+
 .navbar .navbar-nav {
   display: flex;
   gap: var(--gap);
 }
+
 .navbar .nav-item {
   cursor: pointer;
   color: var(--white);
@@ -67,12 +79,15 @@ p {
   transition: var(--transition);
   box-shadow: var(--shadow);
 }
+
 .navbar .nav-item:hover {
   scale: 1.2;
   /* background-color: #003ad9; */
   background-color: #fffffe20;
 }
+
 /* -------------------------------------------- */
+
 .header .btn-group .btn {
   cursor: pointer;
   font-size: 1rem;
@@ -87,23 +102,29 @@ p {
   display: none;
   -webkit-backdrop-filter: var(--blur);
 }
+
 .header .btn:hover {
   background-color: #fffffe80;
 }
+
 /* -------------------------------------------- */
+
 @media only screen and (max-width: 480px) {
   .btn-group .nav-btn:nth-child(2) {
     display: none;
   }
 }
+
 @media only screen and (max-width: 857px) {
   .header .navbar {
     display: none;
   }
 }
 
+/* Header End */
 /* -------------------------------------------- */
-/* Container-1 */
+/* Container-1 Start */
+
 .container-1 {
   display: flex;
   gap: var(--gap);
@@ -114,6 +135,7 @@ p {
   height: clamp(14rem, 10vw, 20rem);
   padding: var(--gap) 0;
 }
+
 .container-1::before {
   content: "";
   width: 100%;
@@ -125,6 +147,7 @@ p {
   background-size: cover;
   background-position: center;
 }
+
 .container-1 .title {
   display: flex;
   font-size: clamp(1.5rem, 5vw, 2rem);
@@ -133,9 +156,11 @@ p {
   letter-spacing: 3px;
   justify-content: center;
 }
+
 .container-1 .line {
   position: relative;
 }
+
 .container-1 .line::before {
   width: 0;
   bottom: 0;
@@ -146,11 +171,13 @@ p {
   background-color: #121212;
   animation: lineAnimation 3s ease 1 forwards;
 }
+
 @keyframes lineAnimation {
   100% {
     width: 100%;
   }
 }
+
 .container-1 .text {
   width: 80%;
   margin: auto;
@@ -158,6 +185,7 @@ p {
   font-size: clamp(0.2rem, 3vw, 1rem);
   text-align: center;
 }
+
 .container-1 .container-btn,
 .official-button {
   color: #121212;
@@ -172,27 +200,33 @@ p {
   box-shadow: 0 2px 3px #12121230, inset 1px 2px 3px #fffffe50;
   background-image: linear-gradient(to top left, #8a2be2, #add8e6);
 }
+
 .container-btn:hover,
 .official-button:hover {
   scale: 0.9;
   background-size: 300%;
   filter: saturate(180%);
 }
+
 /* -------------------------------------------- */
+
 @media only screen and (max-width: 480px) {
   .container .text {
     font-size: var(--gap);
   }
 }
 
+/* Container-1 End */
 /* -------------------------------------------- */
-/* Container-2 */
+/* Container-2 Start */
+
 .container-2 .figure {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+
 .container-2 .figure .figure-img {
   width: clamp(12rem, 50vw, 20rem);
   /* min-width: 12rem;
@@ -211,9 +245,11 @@ p {
   border-top: 1px solid #fffffe30;
   border-left: 1px solid #fffffe30;
 }
+
 .container-2 .figure .figure-caption .title {
   font-size: clamp(1.5rem, 5vw, 2rem);
 }
+
 .official-button {
   right: 3%;
   bottom: 5%;
@@ -221,11 +257,14 @@ p {
   position: fixed;
 }
 
+/* Container-2 End */
 /* -------------------------------------------- */
-/* Container-3 */
+/* Container-3 Start */
+
 .container-3 {
   padding: var(--gap);
 }
+
 .container-title {
   font-size: clamp(1.2rem, 5vw, 2rem);
   text-align: center;
@@ -233,9 +272,11 @@ p {
   padding: var(--gap);
   letter-spacing: 3px;
 }
+
 .container {
   margin: 1rem 0;
 }
+
 .container .content {
   gap: var(--gap);
   display: flex;
@@ -243,18 +284,23 @@ p {
   justify-content: center;
   padding: var(--gap);
 }
+
 /* -------------------------------------------- */
+
 @keyframes slide {
   from {
     scale: 0.5;
     translate: -10rem;
   }
+
   to {
     scale: 1;
     translate: 0;
   }
 }
+
 /* -------------------------------------------- */
+
 .container .content .item .link {
   padding: var(--gap);
   animation: slide 1s linear;
@@ -265,13 +311,16 @@ p {
   color: var(--white);
   box-shadow: var(--shadow);
 }
+
 .container .content .link {
   font-size: 1rem;
   display: block;
 }
 
+/* Container-3 End */
 /* -------------------------------------------- */
-/* container-4 */
+/* Container-4 Start */
+
 .container-4 .content .item .link {
   text-align: center;
   color: var(--white);
@@ -280,8 +329,10 @@ p {
   width: clamp(7rem, 5vw, 10rem);
 }
 
+/* Container-4 End */
 /* -------------------------------------------- */
-/* container-5 */
+/* Container-5 Start */
+
 .container-5 .content .item .link {
   text-align: center;
   color: var(--white);
@@ -290,36 +341,45 @@ p {
   width: clamp(12rem, 5vw, 16rem);
 }
 
+/* Container-5 End */
 /* -------------------------------------------- */
-/* container-6 */
+/* Container-6 Start */
+
 .container-6 {
   gap: 0.5rem;
 }
+
 .container-6 .content {
   column-gap: var(--gap);
-  row-gap: 0rem;
+  row-gap: 0;
   justify-content: start;
   overflow-y: scroll;
 }
+
 .container-6 .content .item {
   display: inline;
   color: #444444;
 }
+
 .container-6 .content .item {
   font-size: clamp(0.5rem, 3vw, 1rem);
 }
+
 .container-6 .content .item:hover {
   text-decoration: underline;
 }
 
+/* Container-6 End */
 /* -------------------------------------------- */
-/* card */
+/* Card-Group Start */
+
 .card-group {
   display: flex;
   flex-wrap: wrap;
   gap: var(--gap);
   padding: var(--gap);
 }
+
 .card {
   width: 18rem;
   display: flex;
@@ -332,32 +392,41 @@ p {
   flex-direction: column;
   border: 1px solid #8a2be240;
 }
+
 /* -------------------------------------------- */
+
 .card .card-title {
   letter-spacing: 2px;
   font-family: "bree serif";
   font-size: clamp(1.2rem, 5vw, 1.5rem);
 }
+
 .card:hover {
   background-color: #8a2be280;
   border: 1px solid #8a2be200;
 }
+
 .card .highlight {
   color: #4d0193;
   text-decoration: underline;
 }
+
 .card .card-points li {
   list-style: circle;
 }
 
+/* Card-Group End */
 /* -------------------------------------------- */
-/* footer */
+/* Footer Start */
+
 .footer {
   margin-top: var(--gap);
   background-image: linear-gradient(to top left, #8a2be2, #3f7f94);
   text-transform: capitalize;
 }
+
 /* -------------------------------------------- */
+
 .footer .row {
   display: grid;
   padding: 2rem 0;
@@ -367,9 +436,11 @@ p {
   box-shadow: 0 -1rem 1rem #fffffe20, inset 0 1rem 1rem #fffffe20;
   background-image: linear-gradient(to top left, #8a2be2, #3f7f94);
 }
+
 .footer .row .col {
   margin: 0 var(--gap);
 }
+
 .footer .col .title {
   font-size: 1.125rem;
   color: var(--white);
@@ -378,15 +449,19 @@ p {
   letter-spacing: 3px;
   font-family: "bree serif";
 }
+
 .footer .col .footer-item {
   color: #cccccc;
   margin: var(--gap) 0;
   transition: var(--transition);
 }
+
 .footer .footer-link:hover {
   color: var(--white);
 }
+
 /* -------------------------------------------- */
+
 .footer-row {
   display: flex;
   color: var(--white);
@@ -397,25 +472,32 @@ p {
   -webkit-backdrop-filter: var(--blur);
   box-shadow: 0 -1rem 1rem #12121220, inset 0 1rem 1rem #fffffe20;
 }
+
 .footer-row .copyright {
   color: var(--white);
   font-size: 14px;
   text-align: center;
   margin: var(--gap) auto;
 }
+
 .footer-row .footer-menu {
   display: flex;
   gap: var(--gap);
   margin: var(--gap) auto;
 }
+
 .footer-row .footer-menu .footer-item {
   color: var(--white);
   font-size: 0.875rem;
 }
+
 /* -------------------------------------------- */
+
 @media only screen and (max-width: 548px) {
   .footer-row .copyright {
     font-size: var(--gap);
   }
 }
+
+/* Footer End */
 /* -------------------------------------------- */
