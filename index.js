@@ -1,29 +1,31 @@
 // --------------------------------------------
 // createElement() Function Start
+
 const createElement = (tagName, className, textContent) => {
   const element = document.createElement(tagName);
   element.className = className;
+
   if (textContent) {
     element.appendChild(document.createTextNode(textContent));
   }
+
   return element;
 };
 
 // createElement() Function End
 // --------------------------------------------
-
-// --------------------------------------------
 // createNavigationItem() Function Start
+
 const createNavigationItem = (textContent, href) => {
   const navItem = createElement(`li`, `nav-item`);
   const navLink = createElement(`a`, `nav-link`, textContent);
   navLink.href = `https://q3schools.com/${href}/`;
 
-  // --------------------------------------------
   // Append elements & text
   const navigation = document.getElementById(`navigation`);
   navItem.appendChild(navLink);
   navigation.appendChild(navItem);
+
   return navItem;
 };
 
@@ -41,36 +43,39 @@ createNavigationItem(`SQL`, `sql`);
 
 // createNavigationItem() Function End
 // --------------------------------------------
+// createContent3() Function Start
 
-// --------------------------------------------
-// element() Function Start
-const element = (name, text, link) => {
-  const elementItem = createElement(`li`, `item`);
-  const elementLink = createElement(`a`, `link`);
-  const elementName = createElement(`h4`, `sub-title`, `Learn ${name}`);
-  const elementText = createElement(`span`, `text`, `A ${text}`);
-  elementLink.href = `https://q3schools.com/${link}/`;
+const createContent3 = (name, text, href) => {
+  const listItem = createElement(`li`, `item`);
+  const linkItem = createElement(`a`, `link`);
+  const heading3 = createElement(`h4`, `sub-title`, `Learn ${name}`);
+  const span = createElement(`span`, `text`, `A ${text}`);
+  linkItem.href = `https://q3schools.com/${href}/`;
+
   const content3 = document.getElementById(`content-3`);
 
-  content3.appendChild(elementItem);
-  elementItem.appendChild(elementLink);
-  elementLink.append(elementName, elementText);
+  content3.appendChild(listItem);
+  listItem.appendChild(linkItem);
+  linkItem.append(heading3, span);
 };
-let language = `Programming Language`;
-element(`C`, language, `c-programming-tutorial`);
-element(`C++`, language, `c-plus-plus-tutorial`);
-element(`C#`, language, `c-sharp`);
-element(`Python`, language, `python-tutorial`);
-element(`Java`, language, `java-tutorial`);
-element(`Kotlin`, language, `kotlin`);
-element(`HTML`, `Markup Language`, `html`);
-element(`CSS`, `Stylesheet Language`, `css`);
-element(`JavaScript`, `Scripting Language`, `javascript`);
-element(`SQL`, `Domain-specific Language`, `sql`);
-element(`WordPress`, `CMS Tool`, `wordpress`);
-element(`ASP.Net`, `Web-application framework`, `asp-net`);
 
-// element() Function End
+let language = `Programming Language`;
+
+createContent3(`C`, language, `c-programming-tutorial`);
+createContent3(`C++`, language, `c-plus-plus-tutorial`);
+createContent3(`C#`, language, `c-sharp`);
+createContent3(`Python`, language, `python-tutorial`);
+createContent3(`Java`, language, `java-tutorial`);
+createContent3(`Kotlin`, language, `kotlin`);
+
+createContent3(`HTML`, `Markup Language`, `html`);
+createContent3(`CSS`, `Stylesheet Language`, `css`);
+createContent3(`JavaScript`, `Scripting Language`, `javascript`);
+createContent3(`SQL`, `Domain-specific Language`, `sql`);
+createContent3(`WordPress`, `CMS Tool`, `wordpress`);
+createContent3(`ASP.Net`, `Web-application framework`, `asp-net`);
+
+// createContent3() Function End
 // --------------------------------------------
 
 // --------------------------------------------
@@ -240,9 +245,8 @@ tags(`Data Structure`);
 
 // createCard() End
 // --------------------------------------------
-
-// --------------------------------------------
 // createFooterItem() Function Start
+
 // create-footer-item in col 1, 2, 3
 const createFooterItem = (title, href, colPosition) => {
   const footerItem = createElement(`li`, `footer-item`);
@@ -280,9 +284,9 @@ createFooterItem(`training`, `#`, `col3`);
 // --------------------------------------------
 
 // --------------------------------------------
-// currentYear() function Start
+// currentYear Start
 const currentYear = new Date().getFullYear();
 const currentYearElement = document.getElementById(`currentYear`);
 currentYearElement.appendChild(document.createTextNode(currentYear));
-// currentYear() function End
+// currentYear End
 // --------------------------------------------

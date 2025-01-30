@@ -5,7 +5,7 @@
   --gap: 0.75rem;
   --white: #fffffe;
   --black: #121212;
-  --theme: #8a2be2;
+  /* --theme: #8a2be2; */
   --transition: all 0.3s ease;
   --blur: blur(1rem) saturate(180%);
   --shadow: 0 1px 2px #12121230, inset 1px 2px 3px #fffffe30;
@@ -125,6 +125,24 @@ p {
 /* -------------------------------------------- */
 /* Container-1 Start */
 
+.container-1,
+.container-2,
+.container-3,
+.container-4,
+.container-5,
+.container-6 {
+  /* display: block; */
+  /* height: 50vw; */
+}
+
+.container-title {
+  font-size: clamp(1.2rem, 5vw, 2rem);
+  text-align: center;
+  padding: var(--gap);
+  background-color: wheat;
+  letter-spacing: 3px;
+}
+
 .container-1 {
   display: flex;
   gap: var(--gap);
@@ -142,7 +160,7 @@ p {
   height: 100%;
   position: absolute;
   z-index: -1;
-  background: url("https://www.trustedreviews.com/wp-content/uploads/sites/54/2024/09/Yoga-Slim-7i-Aura-2.jpg");
+  /* background: url("https://www.trustedreviews.com/wp-content/uploads/sites/54/2024/09/Yoga-Slim-7i-Aura-2.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -262,27 +280,29 @@ p {
 /* Container-3 Start */
 
 .container-3 {
-  padding: var(--gap);
+  margin-block: 2rem;
 }
 
-.container-title {
-  font-size: clamp(1.2rem, 5vw, 2rem);
-  text-align: center;
-  background-image: linear-gradient(to top left, #8a2be260, #6641cad6);
-  padding: var(--gap);
-  letter-spacing: 3px;
-}
-
-.container {
-  margin: 1rem 0;
-}
-
-.container .content {
-  gap: var(--gap);
+.container-3 .content {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  /* flex-grow: 1; */
   padding: var(--gap);
+}
+
+.container-3 .item {
+  width: 300px;
+  background-color: whitesmoke;
+  padding: var(--gap);
+  transition: var(--transition);
+  border-radius: var(--gap);
+}
+
+.container-3 .item:hover {
+  background-color: wheat;
 }
 
 /* -------------------------------------------- */
@@ -349,6 +369,7 @@ p {
   gap: 0.5rem;
 }
 
+/* 
 .container-6 .content {
   column-gap: var(--gap);
   row-gap: 0;
@@ -367,7 +388,7 @@ p {
 
 .container-6 .content .item:hover {
   text-decoration: underline;
-}
+} */
 
 /* Container-6 End */
 /* -------------------------------------------- */
