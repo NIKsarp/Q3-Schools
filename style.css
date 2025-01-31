@@ -293,60 +293,44 @@ p {
   padding: var(--gap);
 }
 
-.container-3 .item {
+.container-3 .link {
   width: 300px;
+  display: block;
   background-color: whitesmoke;
   padding: var(--gap);
   transition: var(--transition);
   border-radius: var(--gap);
 }
 
-.container-3 .item:hover {
-  background-color: wheat;
-}
-
-/* -------------------------------------------- */
-
-@keyframes slide {
-  from {
-    scale: 0.5;
-    translate: -10rem;
-  }
-
-  to {
-    scale: 1;
-    translate: 0;
-  }
-}
-
-/* -------------------------------------------- */
-
-.container .content .item .link {
-  padding: var(--gap);
-  animation: slide 1s linear;
-  animation-range: entry 0% cover 50%;
-  animation-timeline: view();
-  background-image: linear-gradient(to top left, #8a2be2, #3f7f94);
-  border-radius: var(--gap);
-  color: var(--white);
-  box-shadow: var(--shadow);
-}
-
-.container .content .link {
-  font-size: 1rem;
-  display: block;
+.container-3 .link:hover {
+  background-color: rgb(232, 232, 232);
 }
 
 /* Container-3 End */
 /* -------------------------------------------- */
 /* Container-4 Start */
 
-.container-4 .content .item .link {
-  text-align: center;
-  color: var(--white);
+.container-4 {
+  margin-block: 2rem;
+}
+.content {
+  padding: var(--gap);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.container-4 .link {
+  padding: var(--gap);
+  padding-inline: 2rem;
+  display: block;
+  /* background-color: rgb(165, 165, 165); */
+  background-color:  rgb(232, 232, 232);
   border-radius: var(--gap);
-  background-color: var(--theme);
-  width: clamp(7rem, 5vw, 10rem);
+  box-shadow: inset 2px 4px 10px #fffffe;
+}
+
+.container-4 .link:hover {
+  background-color: whitesmoke;
 }
 
 /* Container-4 End */

@@ -79,24 +79,28 @@ createContent3(`ASP.Net`, `Web-application framework`, `asp-net`);
 // --------------------------------------------
 
 // --------------------------------------------
-// pill() Function Start
-const pill = (text, link) => {
-  const pillItem = createElement(`li`, `item`);
-  const pillLink = createElement(`a`, `link`, text);
-  pillLink.href = `https://q3schools.com/${link}/`;
-  pillItem.appendChild(pillLink);
-  const content4 = document.getElementById(`content-4`);
-  content4.appendChild(pillItem);
-};
-pill(`HTML`, `online-html-css-compiler`);
-pill(`JavaScript`, `online-javascript-compiler`);
-pill(`Python`, `online-python-compiler-programiz`);
-pill(`Java`, `online-java-compiler`);
-pill(`C`, `online-c-language-compiler`);
-pill(`C++`, `online-c-plus-plus-compiler`);
-pill(`C#`, `online-c-sharp-compiler`);
+// createContent4() Function Start
+const createContent4 = (text, href) => {
+  const listItem = createElement(`li`, `item`);
+  const linkItem = createElement(`a`, `link`, text);
+  linkItem.href = `https://q3schools.com/online-${href}/`;
 
-// pill() Function End
+  const content4 = document.getElementById(`content-4`);
+  listItem.appendChild(linkItem);
+
+  content4.appendChild(listItem);
+
+  return listItem;
+};
+createContent4(`HTML`, `html-css-compiler`);
+createContent4(`JavaScript`, `javascript-compiler`);
+createContent4(`Python`, `python-compiler-programiz`);
+createContent4(`Java`, `java-compiler`);
+createContent4(`C`, `c-language-compiler`);
+createContent4(`C++`, `c-plus-plus-compiler`);
+createContent4(`C#`, `c-sharp-compiler`);
+
+// createContent4() Function End
 // --------------------------------------------
 
 // --------------------------------------------
@@ -124,12 +128,12 @@ project(`C#`, `#`);
 // tag() Function Start
 const tags = (text) => {
   const tagItem = createElement(`li`, `item`, text);
-  
+
   const content6 = document.getElementById(`content-6`);
   content6.appendChild(tagItem);
 };
 tags(`C Language`),
-tags(`C++`),
+  tags(`C++`),
   tags(`Java`),
   tags(`Python`),
   tags(`SQL`),
@@ -137,19 +141,19 @@ tags(`C++`),
   tags(`CSS`),
   tags(`JavaScript`),
   tags(`C#`);
-  tags(`Kotlin`);
-  tags(`WordPress`);
-  tags(`ASP.Net`);
-  tags(`Website Development`);
-  tags(`Android Development`);
-  tags(`Software Development`);
-  tags(`Data Science`);
-  tags(`AWS`);
-  tags(`Google Cloud`);
-  tags(`Ethical Hacking`);
-  tags(`Front End Developer`);
-  tags(`Back End Developer`);
-  tags(`Full Stack Developer`);
+tags(`Kotlin`);
+tags(`WordPress`);
+tags(`ASP.Net`);
+tags(`Website Development`);
+tags(`Android Development`);
+tags(`Software Development`);
+tags(`Data Science`);
+tags(`AWS`);
+tags(`Google Cloud`);
+tags(`Ethical Hacking`);
+tags(`Front End Developer`);
+tags(`Back End Developer`);
+tags(`Full Stack Developer`);
 tags(`React.JS`);
 tags(`Native Application`);
 tags(`Hybrid Application`);
@@ -163,7 +167,7 @@ tags(`Data Structure`);
 // createCard() Start
 // article - 1, 2, 3, 4
 // const createCardStructure = (title, textContent) => {
-  //   const cardTitle = createElement(`h3`, `card-title`, title);
+//   const cardTitle = createElement(`h3`, `card-title`, title);
 //   const cardText = createElement(`p`, `card-text`, textContent);
 //   return { cardTitle, cardText };
 // };
