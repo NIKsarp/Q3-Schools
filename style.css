@@ -313,6 +313,7 @@ p {
 .container-4 {
   margin-block: 2rem;
 }
+
 .content {
   padding: var(--gap);
   display: flex;
@@ -324,7 +325,7 @@ p {
   padding-inline: 2rem;
   display: block;
   /* background-color: rgb(165, 165, 165); */
-  background-color:  rgb(232, 232, 232);
+  background-color: rgb(232, 232, 232);
   border-radius: var(--gap);
   box-shadow: inset 2px 4px 10px #fffffe;
 }
@@ -339,7 +340,6 @@ p {
 
 .container-5 .content .item .link {
   text-align: center;
-  color: var(--white);
   border-radius: var(--gap);
   background-color: var(--theme);
   width: clamp(12rem, 5vw, 16rem);
@@ -351,6 +351,12 @@ p {
 
 .container-6 {
   gap: 0.5rem;
+}
+
+.container-6 .content {
+  display: flex;
+  gap: var(--gap);
+  flex-wrap: wrap;
 }
 
 /* 
