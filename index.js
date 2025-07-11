@@ -139,73 +139,48 @@ containerCard_3(
 // --------------------------------------------
 // containerCompiler_4(): Compilers Function Start
 
-const containerCompiler_4 = (title, link, src, alt) => {
-  const containerItem = createElement(`div`, `container-item`);
-  const rhombusShape = createElement(`div`, `rhombus-shape`);
-  const containerText = createElement(`span`, `container-text`, title);
-  const containerItemLink = createElement(`a`, `container-link`);
-  const figure = createElement(`figure`, `figure`);
-  const figureImg = createElement(`img`, `figure-img`);
-
-  // --------------------------------------------
-  // Link and Image
-  containerItemLink.href = `https://q3schools.com/online-${link}`;
-  figureImg.src = src;
-  figureImg.alt = alt;
-  figureImg.title = alt;
-
-  // --------------------------------------------
-  // Append elements
+const containerCompiler_4 = (...items) => {
   const container4 = document.getElementById(`container-4`);
-  containerItem.append(rhombusShape, containerText, containerItemLink);
-  containerItemLink.appendChild(figure);
-  figure.appendChild(figureImg);
-  container4.append(containerItem);
 
-  return containerItem;
+  items.map(([title, link, src, alt]) => {
+    const containerItem = createElement(`div`, `container-item`);
+    const rhombusShape = createElement(`div`, `rhombus-shape`);
+    const containerText = createElement(`span`, `container-text`, title);
+    const containerItemLink = createElement(`a`, `container-link`);
+    const figure = createElement(`figure`, `figure`);
+    const figureImg = createElement(`img`, `figure-img`);
+
+    // --------------------------------------------
+    // Link and Image
+    containerItemLink.href = `https://q3schools.com/online-${link}`;
+    figureImg.src = src;
+    figureImg.alt = `${alt} Compiler`;
+    figureImg.title = `${alt} Compiler`;
+
+    // --------------------------------------------
+    // Append elements
+    containerItem.append(rhombusShape, containerText, containerItemLink);
+    containerItemLink.appendChild(figure);
+    figure.appendChild(figureImg);
+    container4.append(containerItem);
+  });
+
+  return container4;
 };
 
 containerCompiler_4(
-  `HTML`,
-  `html-css-compiler`,
-  `src/language/HTML5.png`,
-  `HTML CSS Compiler`
-);
-containerCompiler_4(
-  `JavaScript`,
-  `javascript-compiler`,
-  `src/language/JavaScript.png`,
-  `JavaScript Compiler`
-);
-containerCompiler_4(
-  `Python`,
-  `python-compiler-programiz`,
-  `src/language/Python.png`,
-  `Python Compiler`
-);
-containerCompiler_4(
-  `Java`,
-  `java-compiler`,
-  `src/language/Java.png`,
-  `Java Compiler`
-);
-containerCompiler_4(
-  `C`,
-  `c-language-compiler`,
-  `src/language/C.png`,
-  `C Compiler`
-);
-containerCompiler_4(
-  `C++`,
-  `c-plus-plus-compiler`,
-  `src/language/C++.png`,
-  `C++ Compiler`
-);
-containerCompiler_4(
-  `C#`,
-  `c-sharp-compiler`,
-  `src/language/Csharp.png`,
-  `C# Compiler`
+  [`HTML`, `html-css-compiler`, `src/language/HTML5.png`, `HTML CSS`],
+  [
+    `JavaScript`,
+    `javascript-compiler`,
+    `src/language/JavaScript.png`,
+    `JavaScript`,
+  ],
+  [`Python`, `python-compiler-programiz`, `src/language/Python.png`, `Python`],
+  [`Java`, `java-compiler`, `src/language/Java.png`, `Java`],
+  [`C`, `c-language-compiler`, `src/language/C.png`, `C`],
+  [`C++`, `c-plus-plus-compiler`, `src/language/C++.png`, `C++`],
+  [`C#`, `c-sharp-compiler`, `src/language/Csharp.png`, `C#`]
 );
 
 // containerCompiler_4(): Compilers Function End
