@@ -201,7 +201,12 @@ containerCompiler_4(
   `src/language/C++.png`,
   `C++ Compiler`
 );
-containerCompiler_4(`C#`, `c-sharp-compiler`, `src/language/Csharp.png`, `C# Compiler`);
+containerCompiler_4(
+  `C#`,
+  `c-sharp-compiler`,
+  `src/language/Csharp.png`,
+  `C# Compiler`
+);
 
 // containerCompiler_4(): Compilers Function End
 // --------------------------------------------
@@ -258,7 +263,11 @@ containerCompiler_5(
 );
 containerCompiler_5(`src/project/Project 4.jpg`, `src/language/C.png`, `C`);
 containerCompiler_5(`src/project/Project 5.jpg`, `src/language/C++.png`, `C++`);
-containerCompiler_5(`src/project/Project 6.jpg`, `src/language/Csharp.png`, `C#`);
+containerCompiler_5(
+  `src/project/Project 6.jpg`,
+  `src/language/Csharp.png`,
+  `C#`
+);
 
 // containerCompiler_5(): Projects Function End
 // --------------------------------------------
@@ -277,45 +286,50 @@ const randomColor = () => {
 // --------------------------------------------
 // containerTag_6(): Tags Function Start
 
-const containerTag_6 = (title) => {
-  const containerTag = createElement(`li`, `container-tag`, title);
-  containerTag.style.backgroundColor = randomColor();
-
-  // --------------------------------------------
-  // Append elements
+const containerTag_6 = (...items) => {
   const container6 = document.getElementById(`container-6`);
-  container6.appendChild(containerTag);
 
-  return containerTag;
+  items.map(([title]) => {
+    const containerTag = createElement(`li`, `container-tag`, title);
+    containerTag.style.backgroundColor = randomColor();
+
+    // --------------------------------------------
+    // Append elements
+    container6.appendChild(containerTag);
+  });
+
+  return container6;
 };
 
-containerTag_6("C Language");
-containerTag_6("C++");
-containerTag_6("Java");
-containerTag_6("Python");
-containerTag_6("SQL");
-containerTag_6("HTML");
-containerTag_6("CSS");
-containerTag_6("JavaScript");
-containerTag_6("C#");
-containerTag_6("Kotlin");
-containerTag_6("WordPress");
-containerTag_6("ASP.Net");
-containerTag_6("Website Development");
-containerTag_6("Android Development");
-containerTag_6("Software Development");
-containerTag_6("Data Science");
-containerTag_6("AWS");
-containerTag_6("Google Cloud");
-containerTag_6("Ethical Hacking");
-containerTag_6("Front End Developer");
-containerTag_6("Back End Developer");
-containerTag_6("Full Stack Developer");
-containerTag_6("React.JS");
-containerTag_6("Native Application");
-containerTag_6("Hybrid Application");
-containerTag_6("Web Application");
-containerTag_6("Data Structure");
+containerTag_6(
+  [`C Language`],
+  [`C++`],
+  [`Java`],
+  [`Python`],
+  [`SQL`],
+  [`HTML`],
+  [`CSS`],
+  [`JavaScript`],
+  [`C#`],
+  [`Kotlin`],
+  [`WordPress`],
+  [`ASP.Net`],
+  [`Website Development`],
+  [`Android Development`],
+  [`Software Development`],
+  [`Data Science`],
+  [`AWS`],
+  [`Google Cloud`],
+  [`Ethical Hacking`],
+  [`Front End Developer`],
+  [`Back End Developer`],
+  [`Full Stack Developer`],
+  [`React.JS`],
+  [`Native Application`],
+  [`Hybrid Application`],
+  [`Web Application`],
+  [`Data Structure`]
+);
 
 // containerTag_6(): Tags Function End
 // --------------------------------------------
