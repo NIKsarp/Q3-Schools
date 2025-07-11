@@ -212,61 +212,50 @@ containerCompiler_4(
 // --------------------------------------------
 // containerCompiler_5(): Projects Function Start
 
-const containerCompiler_5 = (src, iconSrc, title) => {
-  const containerItem = createElement(`div`, `container-item`);
-  const figure = createElement(`figure`, `figure`);
-  const figureImg = createElement(`img`, `figure-img`);
-  const containerInner = createElement(`div`, `container-inner`);
-  const containerItemLink = createElement(`a`, `container-link`);
-  const containerIcon = createElement(`img`, `container-icon`);
-  const containerText = createElement(`span`, `container-text`, title);
-
-  // --------------------------------------------
-  // Link and Image
-  containerItemLink.href = `#`;
-  figureImg.src = src;
-  figureImg.alt = `${title} Project`;
-  figureImg.title = `${title} Project`;
-
-  // --------------------------------------------
-  // Container-icon
-  containerIcon.src = iconSrc;
-  containerIcon.alt = title;
-
-  // --------------------------------------------
-  // Append elements
+const containerCompiler_5 = (...items) => {
   const container5 = document.getElementById(`container-5`);
-  containerItem.append(figure, containerInner);
-  figure.appendChild(figureImg);
 
-  containerInner.appendChild(containerItemLink);
-  containerItemLink.append(containerIcon, containerText);
-  container5.append(containerItem);
+  items.map(([src, iconSrc, title]) => {
+    const containerItem = createElement(`div`, `container-item`);
+    const figure = createElement(`figure`, `figure`);
+    const figureImg = createElement(`img`, `figure-img`);
+    const containerInner = createElement(`div`, `container-inner`);
+    const containerItemLink = createElement(`a`, `container-link`);
+    const containerIcon = createElement(`img`, `container-icon`);
+    const containerText = createElement(`span`, `container-text`, title);
 
-  return containerItem;
+    // --------------------------------------------
+    // Link and Image
+    containerItemLink.href = `#`;
+    figureImg.src = src;
+    figureImg.alt = `${title} Project`;
+    figureImg.title = `${title} Project`;
+
+    // --------------------------------------------
+    // Container-icon
+    containerIcon.src = iconSrc;
+    containerIcon.alt = title;
+
+    // --------------------------------------------
+    // Append elements
+    containerItem.append(figure, containerInner);
+    figure.appendChild(figureImg);
+
+    containerInner.appendChild(containerItemLink);
+    containerItemLink.append(containerIcon, containerText);
+    container5.append(containerItem);
+  });
+
+  return container5;
 };
 
 containerCompiler_5(
-  `src/project/Project 1.png`,
-  `src/language/Python.png`,
-  `Python`
-);
-containerCompiler_5(
-  `src/project/Project 2.png`,
-  `src/language/Java.png`,
-  `Java`
-);
-containerCompiler_5(
-  `src/project/Project 3.jpg`,
-  `src/language/JavaScript.png`,
-  `JavaScript`
-);
-containerCompiler_5(`src/project/Project 4.jpg`, `src/language/C.png`, `C`);
-containerCompiler_5(`src/project/Project 5.jpg`, `src/language/C++.png`, `C++`);
-containerCompiler_5(
-  `src/project/Project 6.jpg`,
-  `src/language/Csharp.png`,
-  `C#`
+  [`src/project/Project 1.png`, `src/language/Python.png`, `Python`],
+  [`src/project/Project 2.png`, `src/language/Java.png`, `Java`],
+  [`src/project/Project 3.jpg`, `src/language/JavaScript.png`, `JavaScript`],
+  [`src/project/Project 4.jpg`, `src/language/C.png`, `C`],
+  [`src/project/Project 5.jpg`, `src/language/C++.png`, `C++`],
+  [`src/project/Project 6.jpg`, `src/language/Csharp.png`, `C#`]
 );
 
 // containerCompiler_5(): Projects Function End
