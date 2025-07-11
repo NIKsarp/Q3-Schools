@@ -16,123 +16,127 @@ const createElement = (tagName, className, textContent) => {
 // --------------------------------------------
 // containerCard_3(): Language's Function Start
 
-const containerCard_3 = (src, alt, title, text, link) => {
-  const containerItem = createElement(`div`, `container-item`);
-  const figure = createElement(`figure`, `figure`);
-
-  // --------------------------------------------
-  // Figure Image
-  const figureImg = createElement(`img`, `figure-img`);
-  figureImg.src = src;
-  figureImg.alt = alt;
-  figureImg.title = alt;
-
-  // --------------------------------------------
-  // Card Body Elements
-  const rhombus = createElement(`div`, `rhombus-shape`);
-  const containerBody = createElement(`div`, `container-body`);
-  const containerBox = createElement(`div`, `container-box`);
-  const containerLanguage = createElement(`h4`, `container-language`, title);
-  const containerText = createElement(`span`, `container-text`, text);
-  const containerLink = createElement(`a`, `container-link`, `>`);
-  containerLink.href = `https://q3schools.com/${link}/`;
-
-  // --------------------------------------------
-  // Append elements
+const containerCard_3 = (...items) => {
   const container = document.getElementById(`container-3`);
 
-  container.append(containerItem);
-  containerItem.append(figure, containerBody);
-  figure.append(figureImg, rhombus);
-  containerBody.append(containerBox, containerLink);
-  containerBox.append(containerLanguage, containerText);
+  items.map(([src, alt, title, text, link]) => {
+    const containerItem = createElement(`div`, `container-item`);
+    const figure = createElement(`figure`, `figure`);
 
-  return containerItem;
+    // --------------------------------------------
+    // Figure Image
+    const figureImg = createElement(`img`, `figure-img`);
+    figureImg.src = src;
+    figureImg.alt = alt;
+    figureImg.title = alt;
+
+    // --------------------------------------------
+    // Card Body Elements
+    const rhombus = createElement(`div`, `rhombus-shape`);
+    const containerBody = createElement(`div`, `container-body`);
+    const containerBox = createElement(`div`, `container-box`);
+    const containerLanguage = createElement(`h4`, `container-language`, title);
+    const containerText = createElement(`span`, `container-text`, text);
+    const containerLink = createElement(`a`, `container-link`, `>`);
+    containerLink.href = `https://q3schools.com/${link}/`;
+
+    // --------------------------------------------
+    // Append elements
+    container.append(containerItem);
+    containerItem.append(figure, containerBody);
+    figure.append(figureImg, rhombus);
+    containerBody.append(containerBox, containerLink);
+    containerBox.append(containerLanguage, containerText);
+  });
+
+  return container;
 };
 
 containerCard_3(
-  `src/language/C.png`,
-  `c-programming language`,
-  `C`,
-  `A Programming Language`,
-  `c-programming-tutorial`
-);
-containerCard_3(
-  `src/language/C++.png`,
-  `c-plus-plus prgramming language`,
-  `C++`,
-  `A Programming Language`,
-  `c-plus-plus-tutorial`
-);
-containerCard_3(
-  `src/language/Csharp.png`,
-  `c-sharp prgramming language`,
-  `C#`,
-  `A Programming Language`,
-  `c-sharp`
-);
-containerCard_3(
-  `src/language/Python.png`,
-  `python prgramming language`,
-  `Python`,
-  `A Programming Language`,
-  `python-tutorial`
-);
-containerCard_3(
-  `src/language/Java.png`,
-  `java prgramming language`,
-  `Java`,
-  `A Programming Language`,
-  `java-tutorial`
-);
-containerCard_3(
-  `src/language/Kotlin.png`,
-  `kotlin prgramming language`,
-  `Kotlin`,
-  `A Programming Language`,
-  `kotlin`
-);
-containerCard_3(
-  `src/language/HTML5.png`,
-  `html markup language`,
-  `HTML`,
-  `A Markup Language`,
-  `html`
-);
-containerCard_3(
-  `src/language/CSS.png`,
-  `css stylesheet language`,
-  `CSS`,
-  `A Stylesheet Language`,
-  `css`
-);
-containerCard_3(
-  `src/language/JavaScript.png`,
-  `javascript scripting language`,
-  `JavaScript`,
-  `A Scripting Language`,
-  `javascript`
-);
-containerCard_3(
-  `src/language/SQL.png`,
-  `sql domain-specific language`,
-  `SQL`,
-  `A Domain-specific Language`,
-  `sql`
-);
-containerCard_3(
-  `src/language/Wordpress.png`,
-  `wordpress cms tool`,
-  `Wordpress`,
-  `A CMS Tool`,
-  `wordpress`
-);
-containerCard_3(
-  `src/language/ASP.Net.png`,
-  `asp.net web-application framework`,
-  `ASP.Net`,
-  `A Web-application framework`,
-  `asp-net`
+  [
+    `src/language/C.png`,
+    `c-programming language`,
+    `C`,
+    `A Programming Language`,
+    `c-programming-tutorial`,
+  ],
+  [
+    `src/language/C++.png`,
+    `c-plus-plus programming language`,
+    `C++`,
+    `A Programming Language`,
+    `c-plus-plus-tutorial`,
+  ],
+  [
+    `src/language/Csharp.png`,
+    `c-sharp programming language`,
+    `C#`,
+    `A Programming Language`,
+    `c-sharp`,
+  ],
+  [
+    `src/language/Python.png`,
+    `python programming language`,
+    `Python`,
+    `A Programming Language`,
+    `python-tutorial`,
+  ],
+  [
+    `src/language/Java.png`,
+    `java programming language`,
+    `Java`,
+    `A Programming Language`,
+    `java-tutorial`,
+  ],
+  [
+    `src/language/Kotlin.png`,
+    `kotlin programming language`,
+    `Kotlin`,
+    `A Programming Language`,
+    `kotlin`,
+  ],
+  [
+    `src/language/HTML5.png`,
+    `html markup language`,
+    `HTML`,
+    `A Markup Language`,
+    `html`,
+  ],
+  [
+    `src/language/CSS.png`,
+    `css stylesheet language`,
+    `CSS`,
+    `A Stylesheet Language`,
+    `css`,
+  ],
+  [
+    `src/language/JavaScript.png`,
+    `javascript scripting language`,
+    `JavaScript`,
+    `A Scripting Language`,
+    `javascript`,
+  ],
+  [
+    `src/language/SQL.png`,
+    `sql domain-specific language`,
+    `SQL`,
+    `A Domain-specific Language`,
+    `sql`,
+  ],
+  [
+    `src/language/Wordpress.png`,
+    `wordpress cms tool`,
+    `Wordpress`,
+    `A CMS Tool`,
+    `wordpress`,
+  ],
+  [
+    `src/language/ASP.Net.png`,
+    `asp.net web-application framework`,
+    `ASP.Net`,
+    `A Web-application framework`,
+    `asp-net`,
+  ]
 );
 
 // containerCard_3(): Language's Function End
