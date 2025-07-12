@@ -221,25 +221,39 @@ const containerCompiler_5 = (...items) => {
   const container5 = document.getElementById(`container-5`);
 
   items.map(([src, iconSrc, title]) => {
-    const containerItem = createElement(`div`, `container-item`);
-    const figure = createElement(`figure`, `figure`);
-    const figureImg = createElement(`img`, `figure-img`);
-    const containerInner = createElement(`div`, `container-inner`);
-    const containerItemLink = createElement(`a`, `container-link`);
-    const containerIcon = createElement(`img`, `container-icon`);
-    const containerText = createElement(`span`, `container-text`, title);
-
-    // --------------------------------------------
-    // Link and Image
-    containerItemLink.href = `#`;
-    figureImg.src = src;
-    figureImg.alt = `${title} Project`;
-    figureImg.title = `${title} Project`;
-
+    const containerItem = createElement(`div`, ``, [`class`, `container-item`]);
+    const figure = createElement(`figure`, ``, [`class`, `figure`]);
+    const figureImg = createElement(
+      `img`,
+      ``,
+      [`class`, `figure-img`],
+      [`src`, src],
+      [`alt`, `${title} Project`],
+      [`title`, `${title} Project`]
+    );
+    const containerInner = createElement(`div`, ``, [
+      `class`,
+      `container-inner`,
+    ]);
+    const containerItemLink = createElement(
+      `a`,
+      ``,
+      [`class`, `container-link`],
+      [`href`, `#`]
+    );
     // --------------------------------------------
     // Container-icon
-    containerIcon.src = iconSrc;
-    containerIcon.alt = title;
+    const containerIcon = createElement(
+      `img`,
+      ``,
+      [`class`, `container-icon`],
+      [`src`, iconSrc],
+      [`alt`, title]
+    );
+    const containerText = createElement(`span`, title, [
+      `class`,
+      `container-text`,
+    ]);
 
     // --------------------------------------------
     // Append elements
@@ -284,8 +298,12 @@ const containerTag_6 = (...items) => {
   const container6 = document.getElementById(`container-6`);
 
   items.map(([title]) => {
-    const containerTag = createElement(`li`, `container-tag`, title);
-    containerTag.style.backgroundColor = randomColor();
+    const containerTag = createElement(
+      `li`,
+      title,
+      [`class`, `container-tag`],
+      [`style`, `background-color: ${randomColor()};`]
+    );
 
     // --------------------------------------------
     // Append elements
