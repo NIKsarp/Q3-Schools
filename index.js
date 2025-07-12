@@ -1,13 +1,17 @@
 // --------------------------------------------
 // createElement() Function Start
 
-const createElement = (tagName, className, textContent) => {
+const createElement = (tagName, textContent, ...attribute) => {
   const element = document.createElement(tagName);
-  element.className = className;
 
   if (textContent) {
     element.appendChild(document.createTextNode(textContent));
   }
+
+  // Set each attribute as [name, value]
+  attribute.forEach(([name, value]) => {
+    element.setAttribute(name, value);
+  });
 
   return element;
 };
@@ -20,25 +24,39 @@ const containerCard_3 = (...items) => {
   const container = document.getElementById(`container-3`);
 
   items.map(([src, alt, title, text, link]) => {
-    const containerItem = createElement(`div`, `container-item`);
-    const figure = createElement(`figure`, `figure`);
+    const containerItem = createElement(`div`, ``, [`class`, `container-item`]);
+    const figure = createElement(`figure`, ``, [`class`, `figure`]);
 
     // --------------------------------------------
     // Figure Image
-    const figureImg = createElement(`img`, `figure-img`);
-    figureImg.src = src;
-    figureImg.alt = alt;
-    figureImg.title = alt;
+    const figureImg = createElement(
+      `img`,
+      ``,
+      [`class`, `figure-img`],
+      [`src`, src],
+      [`alt`, alt],
+      [`title`, title]
+    );
 
     // --------------------------------------------
     // Card Body Elements
-    const rhombus = createElement(`div`, `rhombus-shape`);
-    const containerBody = createElement(`div`, `container-body`);
-    const containerBox = createElement(`div`, `container-box`);
-    const containerLanguage = createElement(`h4`, `container-language`, title);
-    const containerText = createElement(`span`, `container-text`, text);
-    const containerLink = createElement(`a`, `container-link`, `>`);
-    containerLink.href = `https://q3schools.com/${link}/`;
+    const rhombus = createElement(`div`, ``, [`class`, `rhombus-shape`]);
+    const containerBody = createElement(`div`, ``, [`class`, `container-body`]);
+    const containerBox = createElement(`div`, ``, [`class`, `container-box`]);
+    const containerLanguage = createElement(`h4`, title, [
+      `class`,
+      `container-language`,
+    ]);
+    const containerText = createElement(`span`, text, [
+      `class`,
+      `container-text`,
+    ]);
+    const containerLink = createElement(
+      `a`,
+      `>`,
+      [`class`, `container-link`],
+      [`href`, `https://q3schools.com/${link}/`]
+    );
 
     // --------------------------------------------
     // Append elements
@@ -147,19 +165,27 @@ const containerCompiler_4 = (...items) => {
   const container4 = document.getElementById(`container-4`);
 
   items.map(([title, link, src, alt]) => {
-    const containerItem = createElement(`div`, `container-item`);
-    const rhombusShape = createElement(`div`, `rhombus-shape`);
-    const containerText = createElement(`span`, `container-text`, title);
-    const containerItemLink = createElement(`a`, `container-link`);
-    const figure = createElement(`figure`, `figure`);
-    const figureImg = createElement(`img`, `figure-img`);
-
-    // --------------------------------------------
-    // Link and Image
-    containerItemLink.href = `https://q3schools.com/online-${link}`;
-    figureImg.src = src;
-    figureImg.alt = `${alt} Compiler`;
-    figureImg.title = `${alt} Compiler`;
+    const containerItem = createElement(`div`, ``, [`class`, `container-item`]);
+    const rhombusShape = createElement(`div`, ``, [`class`, `rhombus-shape`]);
+    const containerText = createElement(`span`, title, [
+      `class`,
+      `container-text`,
+    ]);
+    const containerItemLink = createElement(
+      `a`,
+      ``,
+      [`class`, `container-link`],
+      [`href`, `https://q3schools.com/online-${link}`]
+    );
+    const figure = createElement(`figure`, ``, [`class`, `figure`]);
+    const figureImg = createElement(
+      `img`,
+      ``,
+      [`class`, `figure-img`],
+      [`src`, src],
+      [`alt`, `${alt} Compiler`],
+      [`title`, `${alt} Compiler`]
+    );
 
     // --------------------------------------------
     // Append elements
