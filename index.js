@@ -228,7 +228,7 @@ const containerCompiler_5 = (...items) => {
       [`alt`, `${title} Project`],
       [`title`, `${title} Project`],
     ]);
-    const containerInner = createElement(`div`, [`class`, `container-inner`]);
+    const containerInner = createElement(`div`, [[`class`, `container-inner`]]);
     const containerItemLink = createElement(`a`, [
       [`class`, `container-link`],
       [`href`, `#`],
