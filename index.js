@@ -23,7 +23,7 @@ const createElement = (tagName, textContent, ...attribute) => {
 const containerCard_3 = (...items) => {
   const container = document.getElementById(`container-3`);
 
-  items.map(([src, alt, title, text, link]) => {
+  items.forEach(([src, alt, title, text, link]) => {
     const containerItem = createElement(`div`, ``, [`class`, `container-item`]);
     const figure = createElement(`figure`, ``, [`class`, `figure`]);
 
@@ -164,7 +164,7 @@ containerCard_3(
 const containerCompiler_4 = (...items) => {
   const container4 = document.getElementById(`container-4`);
 
-  items.map(([title, link, src, alt]) => {
+  items.forEach(([title, link, src, alt]) => {
     const containerItem = createElement(`div`, ``, [`class`, `container-item`]);
     const rhombusShape = createElement(`div`, ``, [`class`, `rhombus-shape`]);
     const containerText = createElement(`span`, title, [
@@ -220,7 +220,7 @@ containerCompiler_4(
 const containerCompiler_5 = (...items) => {
   const container5 = document.getElementById(`container-5`);
 
-  items.map(([src, iconSrc, title]) => {
+  items.forEach(([src, iconSrc, title]) => {
     const containerItem = createElement(`div`, ``, [`class`, `container-item`]);
     const figure = createElement(`figure`, ``, [`class`, `figure`]);
     const figureImg = createElement(
@@ -297,7 +297,7 @@ const randomColor = () => {
 const containerTag_6 = (...items) => {
   const container6 = document.getElementById(`container-6`);
 
-  items.map(([title]) => {
+  items.forEach(([title]) => {
     const containerTag = createElement(
       `li`,
       title,
