@@ -1,13 +1,8 @@
 // --------------------------------------------
 // createElement() Function Start
 
-const createElement = (tagName, [...attribute], textContent) => {
+const createElement = (tagName, textContent) => {
   const element = document.createElement(tagName);
-
-  // Set each attribute as [name, value]
-  attribute.forEach(([name, value]) => {
-    element.setAttribute(name, value);
-  });
 
   if (textContent) {
     element.appendChild(document.createTextNode(textContent));
@@ -24,49 +19,46 @@ const containerCard_3 = (...items) => {
   const container = document.getElementById(`container-3`);
 
   items.forEach(([src, alt, title, text, link]) => {
-    const containerItem = createElement(`div`, [[`class`, `container-item`]]);
-    const figure = createElement(`figure`, [[`class`, `figure`]]);
+    // ELEMENTS
+    const div = createElement(`div`);
+    const figure = createElement(`figure`);
+    const img = createElement(`img`);
 
-    // --------------------------------------------
-    // Figure Image
-    const figureImg = createElement(`img`, [
-      [`class`, `figure-img`],
-      [`src`, src],
-      [`alt`, alt],
-      [`title`, title],
-    ]);
+    // CLASSNAME
+    div.className = `container-item`;
+    figure.className = `figure`;
+    img.className = `figure-img`;
 
-    // --------------------------------------------
-    // Card Body Elements
-    const rhombus = createElement(`div`, [[`class`, `rhombus-shape`]]);
-    const containerBody = createElement(`div`, [[`class`, `container-body`]]);
-    const containerBox = createElement(`div`, [[`class`, `container-box`]]);
-    const containerLanguage = createElement(
-      `h4`,
-      [[`class`, `container-language`]],
-      title
-    );
-    const containerText = createElement(
-      `span`,
-      [[`class`, `container-text`]],
-      text
-    );
-    const containerLink = createElement(
-      `a`,
-      [
-        [`class`, `container-link`],
-        [`href`, `https://q3schools.com/${link}/`],
-      ],
-      `>`
-    );
+    // ATTRIBUTES
+    img.src = src;
+    img.alt = alt;
+    img.title = title;
 
-    // --------------------------------------------
-    // Append elements
-    container.append(containerItem);
-    containerItem.append(figure, containerBody);
-    figure.append(figureImg, rhombus);
-    containerBody.append(containerBox, containerLink);
-    containerBox.append(containerLanguage, containerText);
+    // CARD BODY ELEMENTS
+    const rhombus = createElement(`div`);
+    const containerBody = createElement(`div`);
+    const containerBox = createElement(`div`);
+    const h4 = createElement(`h4`, title);
+    const span = createElement(`span`, text);
+    const a = createElement(`a`, `>`);
+
+    // CLASSNAME
+    rhombus.className = `rhombus-shape`;
+    containerBody.className = `container-body`;
+    containerBox.className = `container-box`;
+    h4.className = `container-language`;
+    span.className = `container-text`;
+    a.className = `container-link`;
+
+    // ATTRIBUTES
+    a.href = `https://q3schools.com/${link}/`;
+
+    // APPEND ELEMENTS
+    container.append(div);
+    div.append(figure, containerBody);
+    figure.append(img, rhombus);
+    containerBody.append(containerBox, a);
+    containerBox.append(h4, span);
   });
 
   return container;
@@ -164,37 +156,39 @@ containerCard_3(
 // containerCompiler_4(): Compilers Function Start
 
 const containerCompiler_4 = (...items) => {
-  const container4 = document.getElementById(`container-4`);
+  const section = document.getElementById(`container-4`);
 
   items.forEach(([title, link, src, alt]) => {
-    const containerItem = createElement(`div`, [[`class`, `container-item`]]);
-    const rhombusShape = createElement(`div`, [[`class`, `rhombus-shape`]]);
-    const containerText = createElement(
-      `span`,
-      [[`class`, `container-text`]],
-      title
-    );
-    const containerItemLink = createElement(`a`, [
-      [`class`, `container-link`],
-      [`href`, `https://q3schools.com/online-${link}`],
-    ]);
-    const figure = createElement(`figure`, [[`class`, `figure`]]);
-    const figureImg = createElement(`img`, [
-      [`class`, `figure-img`],
-      [`src`, src],
-      [`alt`, `${alt} Compiler`],
-      [`title`, `${alt} Compiler`],
-    ]);
+    // ELEMENTS
+    const div = createElement(`div`);
+    const div2 = createElement(`div`);
+    const span = createElement(`span`, title);
+    const a = createElement(`a`);
+    const figure = createElement(`figure`);
+    const img = createElement(`img`);
 
-    // --------------------------------------------
-    // Append elements
-    containerItem.append(rhombusShape, containerText, containerItemLink);
-    containerItemLink.appendChild(figure);
-    figure.appendChild(figureImg);
-    container4.append(containerItem);
+    // CLASSNAME
+    div.className = `container-item`;
+    div2.className = `rhombus-shape`;
+    span.className = `container-text`;
+    a.className = `container-link`;
+    figure.className = `figure`;
+    img.className = `figure-img`;
+
+    // ATTRIBUTES
+    a.href = `https://q3schools.com/online-${link}`;
+    img.src = src;
+    img.alt = `${alt} Compiler`;
+    img.title = `${alt} Compiler`;
+
+    // APPEND ELEMENTS
+    div.append(div2, span, a);
+    a.appendChild(figure);
+    figure.appendChild(img);
+    section.append(div);
   });
 
-  return container4;
+  return section;
 };
 
 containerCompiler_4(
@@ -217,46 +211,46 @@ containerCompiler_4(
 // containerCompiler_5(): Projects Function Start
 
 const containerCompiler_5 = (...items) => {
-  const container5 = document.getElementById(`container-5`);
+  const section = document.getElementById(`container-5`);
 
   items.forEach(([src, iconSrc, title]) => {
-    const containerItem = createElement(`div`, [[`class`, `container-item`]]);
-    const figure = createElement(`figure`, [[`class`, `figure`]]);
-    const figureImg = createElement(`img`, [
-      [`class`, `figure-img`],
-      [`src`, src],
-      [`alt`, `${title} Project`],
-      [`title`, `${title} Project`],
-    ]);
-    const containerInner = createElement(`div`, [[`class`, `container-inner`]]);
-    const containerItemLink = createElement(`a`, [
-      [`class`, `container-link`],
-      [`href`, `#`],
-    ]);
-    // --------------------------------------------
-    // Container-icon
-    const containerIcon = createElement(`img`, [
-      [`class`, `container-icon`],
-      [`src`, iconSrc],
-      [`alt`, title],
-    ]);
-    const containerText = createElement(
-      `span`,
-      [[`class`, `container-text`]],
-      title
-    );
+    // ELEMENTS
+    const div = createElement(`div`);
+    const figure = createElement(`figure`);
+    const img = createElement(`img`);
+    const innerDiv = createElement(`div`);
+    const a = createElement(`a`);
+    const imgIcon = createElement(`img`);
+    const span = createElement(`span`, title);
 
-    // --------------------------------------------
-    // Append elements
-    containerItem.append(figure, containerInner);
-    figure.appendChild(figureImg);
+    // CLASSNAME
+    div.className = `container-item`;
+    figure.className = `figure`;
+    img.className = `figure-img`;
+    innerDiv.className = `container-inner`;
+    a.className = `container-link`;
+    imgIcon.className = `container-icon`;
+    span.className = `container-text`;
 
-    containerInner.appendChild(containerItemLink);
-    containerItemLink.append(containerIcon, containerText);
-    container5.append(containerItem);
+    // ATTRIBUTES
+    img.src = src;
+    img.alt = `${title} Project`;
+    img.title = `${title} Project`;
+    a.href = `#`;
+    imgIcon.src = iconSrc;
+    imgIcon.alt = title;
+
+    // APPEND ELEMENTS
+    div.append(figure, innerDiv);
+
+    figure.appendChild(img);
+    innerDiv.appendChild(a);
+
+    a.append(imgIcon, span);
+    section.append(div);
   });
 
-  return container5;
+  return section;
 };
 
 containerCompiler_5(
@@ -286,24 +280,23 @@ const randomColor = () => {
 // containerTag_6(): Tags Function Start
 
 const containerTag_6 = (...items) => {
-  const container6 = document.getElementById(`container-6`);
+  const section = document.getElementById(`container-6`);
 
   items.forEach(([title]) => {
-    const containerTag = createElement(
-      `li`,
-      [
-        [`class`, `container-tag`],
-        [`style`, `background-color: ${randomColor()};`],
-      ],
-      title
-    );
+    // ELEMENTS
+    const li = createElement(`li`, title);
 
-    // --------------------------------------------
-    // Append elements
-    container6.appendChild(containerTag);
+    // CLASSNAME
+    li.className = `container-tag`;
+
+    // STYLES
+    li.style.backgroundColor = randomColor();
+
+    // APPEND ELEMENTS
+    section.appendChild(li);
   });
 
-  return container6;
+  return section;
 };
 
 containerTag_6(
