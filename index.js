@@ -24,15 +24,15 @@ const containerCard_3 = (...items) => {
     const figure = createElement(`figure`);
     const img = createElement(`img`);
 
-    // CLASSNAME
-    div.className = `container-item`;
-    figure.className = `figure`;
-    img.className = `figure-img`;
-
     // ATTRIBUTES
     img.src = src;
     img.alt = alt;
     img.title = title;
+
+    // CLASSNAME
+    div.className = `container-item`;
+    figure.className = `figure`;
+    img.className = `figure-img`;
 
     // CARD BODY ELEMENTS
     const rhombus = createElement(`div`);
@@ -42,6 +42,9 @@ const containerCard_3 = (...items) => {
     const span = createElement(`span`, text);
     const a = createElement(`a`, `>`);
 
+    // ATTRIBUTES
+    a.href = `https://q3schools.com/${link}/`;
+
     // CLASSNAME
     rhombus.className = `rhombus-shape`;
     containerBody.className = `container-body`;
@@ -49,9 +52,6 @@ const containerCard_3 = (...items) => {
     h4.className = `container-language`;
     span.className = `container-text`;
     a.className = `container-link`;
-
-    // ATTRIBUTES
-    a.href = `https://q3schools.com/${link}/`;
 
     // APPEND ELEMENTS
     container.append(div);
@@ -167,6 +167,12 @@ const containerCompiler_4 = (...items) => {
     const figure = createElement(`figure`);
     const img = createElement(`img`);
 
+    // ATTRIBUTES
+    a.href = `https://q3schools.com/online-${link}`;
+    img.src = src;
+    img.alt = `${alt} Compiler`;
+    img.title = `${alt} Compiler`;
+
     // CLASSNAME
     div.className = `container-item`;
     div2.className = `rhombus-shape`;
@@ -174,12 +180,6 @@ const containerCompiler_4 = (...items) => {
     a.className = `container-link`;
     figure.className = `figure`;
     img.className = `figure-img`;
-
-    // ATTRIBUTES
-    a.href = `https://q3schools.com/online-${link}`;
-    img.src = src;
-    img.alt = `${alt} Compiler`;
-    img.title = `${alt} Compiler`;
 
     // APPEND ELEMENTS
     div.append(div2, span, a);
@@ -223,6 +223,14 @@ const containerCompiler_5 = (...items) => {
     const imgIcon = createElement(`img`);
     const span = createElement(`span`, title);
 
+    // ATTRIBUTES
+    img.src = src;
+    img.alt = `${title} Project`;
+    img.title = `${title} Project`;
+    a.href = `#`;
+    imgIcon.src = iconSrc;
+    imgIcon.alt = title;
+
     // CLASSNAME
     div.className = `container-item`;
     figure.className = `figure`;
@@ -231,14 +239,6 @@ const containerCompiler_5 = (...items) => {
     a.className = `container-link`;
     imgIcon.className = `container-icon`;
     span.className = `container-text`;
-
-    // ATTRIBUTES
-    img.src = src;
-    img.alt = `${title} Project`;
-    img.title = `${title} Project`;
-    a.href = `#`;
-    imgIcon.src = iconSrc;
-    imgIcon.alt = title;
 
     // APPEND ELEMENTS
     div.append(figure, innerDiv);
@@ -286,11 +286,11 @@ const containerTag_6 = (...items) => {
     // ELEMENTS
     const li = createElement(`li`, title);
 
-    // CLASSNAME
-    li.className = `container-tag`;
-
     // STYLES
     li.style.backgroundColor = randomColor();
+
+    // CLASSNAME
+    li.className = `container-tag`;
 
     // APPEND ELEMENTS
     section.appendChild(li);
