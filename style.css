@@ -63,7 +63,7 @@ p {
   background-image: linear-gradient(to top left, #5100ff20, #b694ff20);
 }
 
-.header .navbar-brand {
+.header__navbar-brand {
   text-transform: capitalize;
   font-size: clamp(0.7rem, 5vw, var(--gap));
 }
@@ -71,12 +71,12 @@ p {
 /* -------------------------------------------- */
 /* Header: Navbar */
 
-.navbar .navbar-nav {
+.header__navbar-nav {
   display: flex;
   gap: var(--gap);
 }
 
-.navbar .nav-item {
+.header__nav-item {
   cursor: pointer;
   color: var(--white);
   padding: var(--gap);
@@ -90,7 +90,7 @@ p {
   -webkit-backdrop-filter: var(--blur);
 }
 
-.navbar .nav-item:hover {
+.header__nav-item:hover {
   scale: 1.2;
   background-color: #5100ff20;
 }
@@ -98,11 +98,11 @@ p {
 /* -------------------------------------------- */
 /* Header: Btn-Group */
 
-.header .btn-group {
+.header__btn-group {
   display: none;
 }
 
-.header .btn-group .btn {
+.header__btn {
   cursor: pointer;
   font-size: 1rem;
   font-weight: 700;
@@ -123,11 +123,11 @@ p {
 }
 
 @media only screen and (max-width: 857px) {
-  .header .navbar {
+  .header .header__navbar {
     display: none;
   }
 
-  .header .btn-group {
+  .header__btn-group {
     display: block;
   }
 }
@@ -321,7 +321,7 @@ p {
   width: 20rem;
   flex-grow: 1;
   border-radius: 1rem;
-  box-shadow:var(--shadow-light);
+  box-shadow: var(--shadow-light);
   border-top: var(--border-effect);
   border-left: var(--border-effect);
   background-image: linear-gradient(to top left, #add8e6, #5100ff20);
@@ -459,7 +459,7 @@ p {
   text-align: center;
   transform: rotateZ(45deg);
   transition: var(--transition);
-  box-shadow:var(--shadow-light);
+  box-shadow: var(--shadow-light);
   background-image: linear-gradient(to top left, #add8e6, #5100ff20);
 }
 
@@ -506,7 +506,7 @@ p {
   overflow: hidden;
   border-radius: 1rem;
   flex-direction: column;
-  box-shadow:var(--shadow-light);
+  box-shadow: var(--shadow-light);
   border-top: var(--border-effect);
   border-left: var(--border-effect);
 }
@@ -584,7 +584,7 @@ p {
   border-radius: 1rem;
   padding-block: .5rem;
   font-size: var(--gap);
-  box-shadow:var(--shadow-light);
+  box-shadow: var(--shadow-light);
   border-top: var(--border-effect);
   border-left: var(--border-effect);
 }
@@ -597,7 +597,7 @@ p {
 /* -------------------------------------------- */
 /* Card-Group Start */
 
-.card-group {
+.card__group {
   display: flex;
   flex-wrap: wrap;
   gap: var(--gap);
@@ -613,7 +613,7 @@ p {
   flex-direction: column;
   border-radius: var(--gap);
   transition: var(--transition);
-  box-shadow:var(--shadow-light);
+  box-shadow: var(--shadow-light);
   border-top: var(--border-effect);
   border-left: var(--border-effect);
   background-image: linear-gradient(to top left, #add8e620, #5100ff20);
@@ -628,13 +628,13 @@ p {
 /* -------------------------------------------- */
 /* Card-group: Card-title and Card-points */
 
-.card .card-title {
+.card__title {
   letter-spacing: 2px;
   font-family: "bree serif";
   font-size: clamp(1.2rem, 5vw, 1.5rem);
 }
 
-.card .highlight {
+.card .card--highlight {
   color: #4d0193;
   text-decoration: underline;
 }
@@ -673,19 +673,19 @@ p {
   margin-inline: var(--gap);
 }
 
-.footer .col .footer-item {
+.footer__item {
   color: #cccccc;
   margin-block: var(--gap);
   transition: var(--transition);
 }
 
-.footer .footer-link:hover {
+.footer__link:hover {
   color: var(--white);
 }
 
 /* -------------------------------------------- */
 
-.footer-row {
+.footer__row {
   display: flex;
   color: var(--white);
   background: #fffffe20;
@@ -696,20 +696,20 @@ p {
   box-shadow: 0 -1rem 1rem #12121220, inset 0 1rem 1rem #fffffe20;
 }
 
-.footer-row .copyright {
+.footer__row .copyright {
   font-size: 14px;
   text-align: center;
   color: var(--white);
   margin: var(--gap) auto;
 }
 
-.footer-row .footer-menu {
+.footer__row .footer__menu {
   display: flex;
   gap: var(--gap);
   margin: var(--gap) auto;
 }
 
-.footer-row .footer-menu .footer-item {
+.footer__row .footer__item {
   color: var(--white);
   font-size: 0.875rem;
 }
@@ -717,7 +717,7 @@ p {
 /* -------------------------------------------- */
 
 @media only screen and (max-width: 548px) {
-  .footer-row .copyright {
+  .footer__row .copyright {
     font-size: var(--gap);
   }
 }
@@ -730,7 +730,7 @@ p {
 
   a,
   button,
-  .header .btn-group .btn,
+  .header__btn,
   .container-3 .container-item .container-link {
     cursor: text;
   }
