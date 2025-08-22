@@ -30,7 +30,7 @@ const containerCard_3 = (...items) => {
     img.title = title;
 
     // CLASSNAME
-    div.className = `container-item`;
+    div.className = `container__item`;
     figure.className = `figure`;
     img.className = `figure-img`;
 
@@ -47,11 +47,11 @@ const containerCard_3 = (...items) => {
 
     // CLASSNAME
     rhombus.className = `rhombus-shape`;
-    containerBody.className = `container-body`;
-    containerBox.className = `container-box`;
-    h4.className = `container-language`;
-    span.className = `container-text`;
-    a.className = `container-link`;
+    containerBody.className = `container__body`;
+    containerBox.className = `container__box`;
+    h4.className = `container__language`;
+    span.className = `container__text`;
+    a.className = `container__link`;
 
     // APPEND ELEMENTS
     container.append(div);
@@ -174,10 +174,10 @@ const containerCompiler_4 = (...items) => {
     img.title = `${alt} Compiler`;
 
     // CLASSNAME
-    div.className = `container-item`;
+    div.className = `container__item`;
     div2.className = `rhombus-shape`;
-    span.className = `container-text`;
-    a.className = `container-link`;
+    span.className = `container__text`;
+    a.className = `container__link`;
     figure.className = `figure`;
     img.className = `figure-img`;
 
@@ -232,13 +232,13 @@ const containerCompiler_5 = (...items) => {
     imgIcon.alt = title;
 
     // CLASSNAME
-    div.className = `container-item`;
+    div.className = `container__item`;
     figure.className = `figure`;
     img.className = `figure-img`;
-    innerDiv.className = `container-inner`;
-    a.className = `container-link`;
-    imgIcon.className = `container-icon`;
-    span.className = `container-text`;
+    innerDiv.className = `container__inner`;
+    a.className = `container__link`;
+    imgIcon.className = `container__icon`;
+    span.className = `container__text`;
 
     // APPEND ELEMENTS
     div.append(figure, innerDiv);
@@ -290,7 +290,7 @@ const containerTag_6 = (...items) => {
     li.style.backgroundColor = randomColor();
 
     // CLASSNAME
-    li.className = `container-tag`;
+    li.className = `container__tag`;
 
     // APPEND ELEMENTS
     section.appendChild(li);
